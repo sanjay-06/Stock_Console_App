@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stockconsole/screens/home.dart';
-
+import 'package:stockconsole/screens/home/home.dart';
 import 'package:stockconsole/screens/login.dart';
 
 class Signup extends StatefulWidget {

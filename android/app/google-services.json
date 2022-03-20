@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "747183178442",
+    "project_id": "stockconsole-a3867",
+    "storage_bucket": "stockconsole-a3867.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:747183178442:android:4f2a0ca1eb7e8820ecea33",
+        "android_client_info": {
+          "package_name": "com.example.stockconsole"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "747183178442-m9fj4qht1voufvaeipajh7lg3fvdcmr6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC72VthwXvQC5x5Ss73VwJs3LqGNtwZqLU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "747183178442-m9fj4qht1voufvaeipajh7lg3fvdcmr6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
