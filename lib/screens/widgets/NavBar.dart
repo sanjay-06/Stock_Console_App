@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:stockconsole/screens/dashboard/Dashboard.dart';
+import 'package:stockconsole/screens/home/home.dart';
+import 'package:stockconsole/screens/login.dart';
+import 'package:stockconsole/screens/placeorder/order.dart';
 
 class NavBar extends StatelessWidget {
   const NavBar({Key? key}) : super(key: key);
@@ -26,8 +30,8 @@ class NavBar extends StatelessWidget {
             accountEmail: const Text('example@gmail.com'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
-                child: Image.network(
-                  'https://oflutter.com/wp-content/uploads/2021/02/girl-profile.png',
+                child: Image.asset(
+                  'images/user.jpg',
                   fit: BoxFit.cover,
                   width: 90,
                   height: 90,
@@ -36,40 +40,40 @@ class NavBar extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(Icons.favorite),
-            title: Text('Favorites'),
-            onTap: () => null,
+            leading: const Icon(Icons.dashboard),
+            title: const Text('Dashboard'),
+            // ignore: avoid_returning_null_for_void
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Dashboard()))
+            },
           ),
           ListTile(
-            leading: Icon(Icons.person),
-            title: Text('Friends'),
-            onTap: () => null,
+            leading: const Icon(Icons.desktop_mac),
+            title: const Text('Portfolio'),
+            // ignore: avoid_returning_null_for_void
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Home()))
+            },
           ),
           ListTile(
-            leading: Icon(Icons.share),
-            title: Text('Share'),
-            onTap: () => null,
+            leading: const Icon(Icons.shopping_bag),
+            title: const Text('Place order'),
+            // ignore: avoid_returning_null_for_void
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Order()))
+            },
           ),
+          const Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Request'),
-          ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
-            onTap: () => null,
-          ),
-          ListTile(
-            leading: Icon(Icons.description),
-            title: Text('Policies'),
-            onTap: () => null,
-          ),
-          Divider(),
-          ListTile(
-            title: Text('Exit'),
-            leading: Icon(Icons.exit_to_app),
-            onTap: () => null,
+            title: const Text('Exit'),
+            leading: const Icon(Icons.exit_to_app),
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Login()))
+            },
           ),
         ],
       ),

@@ -15,7 +15,7 @@ class StockConsole extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.red,
       ),
-      home: Login(),
+      home: const Login(),
     );
   }
 }

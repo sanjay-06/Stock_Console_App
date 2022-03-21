@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
           },
         ),
         centerTitle: true,
-        title: const Text("My Money"),
+        title: const Text("My Portfolio"),
       ),
       body: SingleChildScrollView(
         child: Column(
