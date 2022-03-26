@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:stockconsole/screens/home/home.dart';
 import 'package:stockconsole/screens/login.dart';
+
+import 'dashboard/Dashboard.dart';
 
 class Signup extends StatefulWidget {
   const Signup({Key? key}) : super(key: key);
@@ -108,8 +109,8 @@ class _SignupState extends State<Signup> {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Home()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Dashboard()));
         },
         child: const Text(
           "Sign up",

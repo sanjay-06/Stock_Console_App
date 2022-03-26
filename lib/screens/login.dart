@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stockconsole/screens/dashboard/Dashboard.dart';
 import 'package:stockconsole/screens/home/home.dart';
 import 'package:stockconsole/screens/signup.dart';
 
@@ -57,8 +58,8 @@ class _LoginState extends State<Login> {
         padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
         minWidth: MediaQuery.of(context).size.width,
         onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => const Home()));
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => const Dashboard()));
         },
         child: const Text(
           "Sign In",
@@ -104,7 +105,7 @@ class _LoginState extends State<Login> {
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Signup()));
+                                      builder: (context) => const Signup()));
                             },
                             child: const Text(
                               " Sign up",
