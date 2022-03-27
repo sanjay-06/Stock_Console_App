@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/stock.dart';
+import 'package:stockconsole/screens/chartview/stockchart.dart';
 
 class StockList extends StatelessWidget {
   final List<Stock> stocks;
@@ -83,7 +84,12 @@ class StockList extends StatelessWidget {
                         style: TextButton.styleFrom(
                           primary: Colors.blue,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Stockchart()));
+                        },
                         child: const Text(
                           "View Chart",
                           style: TextStyle(fontSize: 15),
