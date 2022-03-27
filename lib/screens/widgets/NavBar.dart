@@ -62,8 +62,8 @@ class NavBar extends StatelessWidget {
             title: const Text('Place order'),
             // ignore: avoid_returning_null_for_void
             onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Order()))
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Order()))
             },
           ),
           const Divider(),

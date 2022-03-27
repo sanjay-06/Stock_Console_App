@@ -67,6 +67,39 @@ class _StocksState extends State<Stocks> {
               borderRadius: BorderRadius.circular(10),
               borderSide: const BorderSide(color: Colors.white)),
         ),
+        Card(
+          child: const ListTile(
+            title: Text("5) MRF"),
+          ),
+          elevation: 8,
+          shadowColor: Colors.green,
+          margin: const EdgeInsets.all(20),
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.white)),
+        ),
+        Card(
+          child: const ListTile(
+            title: Text("5) MRF"),
+          ),
+          elevation: 8,
+          shadowColor: Colors.green,
+          margin: const EdgeInsets.all(20),
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.white)),
+        ),
+        Card(
+          child: const ListTile(
+            title: Text("5) MRF"),
+          ),
+          elevation: 8,
+          shadowColor: Colors.green,
+          margin: const EdgeInsets.all(20),
+          shape: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(10),
+              borderSide: const BorderSide(color: Colors.white)),
+        ),
       ],
     );
   }

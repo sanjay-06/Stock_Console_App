@@ -2,6 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:stockconsole/screens/widgets/NavBar.dart';
+import 'package:stockconsole/screens/widgets/Footer.dart';
+
 // import 'package:flutter_candlesticks/flutter_candlesticks.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
@@ -24,80 +26,80 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const NavBar()));
-            },
-          ),
-          centerTitle: true,
-          title: const Text("Dashboard"),
+      appBar: AppBar(
+        leading: IconButton(
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const NavBar()));
+          },
         ),
-        body: Container(
+        centerTitle: true,
+        title: const Text("Dashboard"),
+      ),
+      body: Column(
+        children: [
+          Card(
+            margin: const EdgeInsets.all(10),
+            // color: Colors.green[100],
+            shadowColor: Colors.blueGrey,
+            elevation: 10,
             child: Column(
-          children: [
-            Card(
-              margin: const EdgeInsets.all(10),
-              // color: Colors.green[100],
-              shadowColor: Colors.blueGrey,
-              elevation: 10,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const SizedBox(height: 5),
-                  SfCartesianChart(
-                    title: ChartTitle(text: "Nifty50 : 17153"),
-                    series: <CandleSeries>[
-                      CandleSeries<ChartSampleData, num>(
-                          dataSource: _chartData,
-                          xValueMapper: (ChartSampleData sales, _) => sales.x,
-                          lowValueMapper: (ChartSampleData sales, _) =>
-                              sales.low,
-                          highValueMapper: (ChartSampleData sales, _) =>
-                              sales.high,
-                          openValueMapper: (ChartSampleData sales, _) =>
-                              sales.open,
-                          closeValueMapper: (ChartSampleData sales, _) =>
-                              sales.close)
-                    ],
-                  ),
-                ],
-              ),
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const SizedBox(height: 5),
+                SfCartesianChart(
+                  title: ChartTitle(text: "Nifty50 : 17153"),
+                  series: <CandleSeries>[
+                    CandleSeries<ChartSampleData, num>(
+                        dataSource: _chartData,
+                        xValueMapper: (ChartSampleData sales, _) => sales.x,
+                        lowValueMapper: (ChartSampleData sales, _) => sales.low,
+                        highValueMapper: (ChartSampleData sales, _) =>
+                            sales.high,
+                        openValueMapper: (ChartSampleData sales, _) =>
+                            sales.open,
+                        closeValueMapper: (ChartSampleData sales, _) =>
+                            sales.close)
+                  ],
+                ),
+              ],
             ),
-            const SizedBox(height: 5),
-            Card(
-              margin: const EdgeInsets.all(10),
-              // color: Colors.green[100],
-              shadowColor: Colors.blueGrey,
-              elevation: 10,
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  const SizedBox(height: 5),
-                  const SizedBox(height: 5),
-                  SfCartesianChart(
-                    title: ChartTitle(text: "Sensex : 57369.20"),
-                    series: <CandleSeries>[
-                      CandleSeries<ChartSampleData, num>(
-                          dataSource: _chartData,
-                          xValueMapper: (ChartSampleData sales, _) => sales.x,
-                          lowValueMapper: (ChartSampleData sales, _) =>
-                              sales.low,
-                          highValueMapper: (ChartSampleData sales, _) =>
-                              sales.high,
-                          openValueMapper: (ChartSampleData sales, _) =>
-                              sales.open,
-                          closeValueMapper: (ChartSampleData sales, _) =>
-                              sales.close)
-                    ],
-                  ),
-                ],
-              ),
-            )
-          ],
-        )));
+          ),
+          const SizedBox(height: 5),
+          Card(
+            margin: const EdgeInsets.all(10),
+            // color: Colors.green[100],
+            shadowColor: Colors.blueGrey,
+            elevation: 10,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const SizedBox(height: 5),
+                const SizedBox(height: 5),
+                SfCartesianChart(
+                  title: ChartTitle(text: "Sensex : 57369.20"),
+                  series: <CandleSeries>[
+                    CandleSeries<ChartSampleData, num>(
+                        dataSource: _chartData,
+                        xValueMapper: (ChartSampleData sales, _) => sales.x,
+                        lowValueMapper: (ChartSampleData sales, _) => sales.low,
+                        highValueMapper: (ChartSampleData sales, _) =>
+                            sales.high,
+                        openValueMapper: (ChartSampleData sales, _) =>
+                            sales.open,
+                        closeValueMapper: (ChartSampleData sales, _) =>
+                            sales.close)
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+
+      // persistentFooterButtons: const [Footer()],
+    );
   }
 
   List<ChartSampleData> getChartData() {
