@@ -41,20 +41,11 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.dashboard),
-            title: const Text('Dashboard'),
+            title: const Text('Market Overview'),
             // ignore: avoid_returning_null_for_void
             onTap: () => {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const Dashboard()))
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.desktop_mac),
-            title: const Text('Portfolio'),
-            // ignore: avoid_returning_null_for_void
-            onTap: () => {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const Home()))
             },
           ),
           ListTile(
@@ -64,6 +55,15 @@ class NavBar extends StatelessWidget {
             onTap: () => {
               Navigator.push(
                   context, MaterialPageRoute(builder: (context) => Order()))
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.desktop_mac),
+            title: const Text('Portfolio'),
+            // ignore: avoid_returning_null_for_void
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Home()))
             },
           ),
           const Divider(),

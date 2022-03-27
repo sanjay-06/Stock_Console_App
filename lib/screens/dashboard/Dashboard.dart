@@ -35,7 +35,7 @@ class _DashboardState extends State<Dashboard> {
           },
         ),
         centerTitle: true,
-        title: const Text("Dashboard"),
+        title: const Text("Market Overview"),
       ),
       body: Column(
         children: [
