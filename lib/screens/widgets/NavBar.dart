@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:stockconsole/screens/dashboard/Dashboard.dart';
 import 'package:stockconsole/screens/home/home.dart';
 import 'package:stockconsole/screens/login.dart';
+import 'package:stockconsole/screens/news/stocknews.dart';
 import 'package:stockconsole/screens/placeorder/order.dart';
 
 class NavBar extends StatelessWidget {
@@ -64,6 +65,15 @@ class NavBar extends StatelessWidget {
             onTap: () => {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => const Home()))
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.satellite_outlined),
+            title: const Text('News'),
+            // ignore: avoid_returning_null_for_void
+            onTap: () => {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Stocknews()))
             },
           ),
           const Divider(),
