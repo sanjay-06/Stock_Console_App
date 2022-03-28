@@ -38,6 +38,8 @@ dependencies:
   candlesticks: ^2.1.0
   simple_candlestick_chart: ^0.0.2
   flutter_candlesticks: ^0.1.4
+  flutter_swiper: ^1.1.6
+  google_fonts: ^2.3.0
 
 dev_dependencies:
   flutter_test:
