@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/news.dart';
+import 'package:stockconsole/screens/news/customListTile.dart';
 import 'package:stockconsole/screens/widgets/NavBar.dart';
 import 'package:stockconsole/services/api.dart';
 
@@ -39,7 +40,8 @@ class _StocknewsState extends State<Stocknews> {
             return ListView.builder(
               //Now let's create our custom List tile
               itemCount: articles!.length,
-              itemBuilder: (context, index) => Text(articles[index].title),
+              itemBuilder: (context, index) =>
+                  customListTile(articles[index], context),
             );
           }
           return Center(
