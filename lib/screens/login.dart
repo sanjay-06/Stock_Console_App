@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:stockconsole/screens/dashboard/Dashboard.dart';
-import 'package:stockconsole/screens/home/home.dart';
 import 'package:stockconsole/screens/signup.dart';
 
 class Login extends StatefulWidget {
