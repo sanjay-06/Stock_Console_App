@@ -86,7 +86,7 @@ class _LoginState extends State<Login> {
                       SizedBox(
                         height: 200,
                         child:
-                            Image.asset("images/logo.jpg", fit: BoxFit.contain),
+                            Image.asset("images/logo.png", fit: BoxFit.contain),
                       ),
                       const SizedBox(height: 45),
                       emailField,
