@@ -88,7 +88,8 @@ class StockList extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const Stockchart()));
+                                  builder: (context) =>
+                                      Stockchart(title: stock.company)));
                         },
                         child: const Text(
                           "View Chart",

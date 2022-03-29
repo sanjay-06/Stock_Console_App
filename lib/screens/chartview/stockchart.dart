@@ -3,14 +3,20 @@ import 'package:stockconsole/screens/dashboard/Dashboard.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Stockchart extends StatefulWidget {
-  const Stockchart({Key? key}) : super(key: key);
+  final String title;
+  const Stockchart({Key? key, required this.title}) : super(key: key);
 
   @override
-  State<Stockchart> createState() => _StockchartState();
+  State<Stockchart> createState() {
+    return _StockchartState(this.title);
+  }
 }
 
 class _StockchartState extends State<Stockchart> {
   late List<ChartSampleData> _chartData;
+  final String title;
+
+  _StockchartState(this.title);
 
   @override
   void initState() {
@@ -42,7 +48,7 @@ class _StockchartState extends State<Stockchart> {
             children: <Widget>[
               const SizedBox(height: 5),
               SfCartesianChart(
-                title: ChartTitle(text: "Nifty50 : 17153"),
+                title: ChartTitle(text: title),
                 series: <CandleSeries>[
                   CandleSeries<ChartSampleData, num>(
                       dataSource: _chartData,
