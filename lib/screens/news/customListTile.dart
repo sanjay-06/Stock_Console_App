@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/news.dart';
 import 'package:stockconsole/screens/news/news.dart';
@@ -13,12 +14,12 @@ Widget customListTile(Article article, BuildContext context) {
                   )));
     },
     child: Container(
-      margin: EdgeInsets.all(12.0),
-      padding: EdgeInsets.all(8.0),
+      margin: const EdgeInsets.all(12.0),
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12.0),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
               color: Colors.black12,
               blurRadius: 3.0,
@@ -31,36 +32,30 @@ Widget customListTile(Article article, BuildContext context) {
           Container(
             height: 200.0,
             width: double.infinity,
-            decoration: BoxDecoration(
-              //let's add the height
-
-              image: DecorationImage(
-                  image: NetworkImage(article.urlToImage), fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(12.0),
-            ),
+            child: Image.network(article.urlToImage),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Container(
-            padding: EdgeInsets.all(6.0),
+            padding: const EdgeInsets.all(6.0),
             decoration: BoxDecoration(
               color: Colors.red,
               borderRadius: BorderRadius.circular(30.0),
             ),
             child: Text(
               article.source.name,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 8.0,
           ),
           Text(
             article.title,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 16.0,
             ),

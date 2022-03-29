@@ -44,7 +44,7 @@ class _StocknewsState extends State<Stocknews> {
                   customListTile(articles[index], context),
             );
           }
-          return Center(
+          return const Center(
             child: CircularProgressIndicator(),
           );
         },
