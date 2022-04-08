@@ -27,8 +27,8 @@ class NavBar extends StatelessWidget {
             ),
           ),
           UserAccountsDrawerHeader(
-            accountName: const Text('Oflutter.com'),
-            accountEmail: const Text('example@gmail.com'),
+            accountName: const Text('Sanjay T'),
+            accountEmail: const Text('19pw28@psgtech.ac.in'),
             currentAccountPicture: CircleAvatar(
               child: ClipOval(
                 child: Image.asset(

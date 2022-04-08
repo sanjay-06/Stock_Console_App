@@ -23,7 +23,7 @@ class _AccountbalanceState extends State<Accountbalance> {
                 ),
                 const SizedBox(height: 15),
                 const Text(
-                  "\$378.15",
+                  "\u{20B9}14451.15",
                   style: TextStyle(
                     fontSize: 26.0,
                   ),
@@ -32,14 +32,14 @@ class _AccountbalanceState extends State<Accountbalance> {
                 Row(
                   children: const [
                     Text(
-                      "+2.14%",
+                      "+0.14%",
                       style: TextStyle(
                         color: Colors.green,
                         fontSize: 16.0,
                       ),
                     ),
                     Icon(
-                      Icons.arrow_upward,
+                      Icons.arrow_upward_rounded,
                       color: Colors.green,
                     ),
                   ],
@@ -54,7 +54,7 @@ class _AccountbalanceState extends State<Accountbalance> {
                 ),
                 const SizedBox(height: 15),
                 const Text(
-                  "\$78.15",
+                  "\u{20B9}289.02",
                   style: TextStyle(
                     fontSize: 26.0,
                   ),
@@ -85,7 +85,7 @@ class _AccountbalanceState extends State<Accountbalance> {
                 ),
                 SizedBox(height: 15),
                 Text(
-                  "\$300",
+                  "\u{20B9}3000",
                   style: TextStyle(
                     fontSize: 26.0,
                   ),

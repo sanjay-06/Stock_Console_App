@@ -4,19 +4,23 @@ import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Stockchart extends StatefulWidget {
   final String title;
-  const Stockchart({Key? key, required this.title}) : super(key: key);
+  final double price;
+  const Stockchart({Key? key, required this.title, required this.price})
+      : super(key: key);
 
   @override
   State<Stockchart> createState() {
-    return _StockchartState(this.title);
+    // ignore: no_logic_in_create_state
+    return _StockchartState(title, price);
   }
 }
 
 class _StockchartState extends State<Stockchart> {
   late List<ChartSampleData> _chartData;
   final String title;
+  final double price;
 
-  _StockchartState(this.title);
+  _StockchartState(this.title, this.price);
 
   @override
   void initState() {
@@ -69,21 +73,96 @@ class _StockchartState extends State<Stockchart> {
 
   List<ChartSampleData> getChartData() {
     return <ChartSampleData>[
-      ChartSampleData(x: 1, open: 110, high: 114.7, low: 1.25, close: 13.95),
-      ChartSampleData(x: 2, open: 10, high: 184.7, low: 18.25, close: 123.95),
-      ChartSampleData(x: 3, open: 100, high: 194.7, low: 8.25, close: 3.95),
-      ChartSampleData(x: 4, open: 80, high: 504.7, low: 8.25, close: 500.95),
-      ChartSampleData(x: 5, open: 120, high: 114.7, low: 8.25, close: 103.95),
-      ChartSampleData(x: 6, open: 110, high: 114.7, low: 1.25, close: 13.95),
-      ChartSampleData(x: 7, open: 12, high: 118.7, low: 18.25, close: 123.95),
-      ChartSampleData(x: 8, open: 11, high: 114.7, low: 8.25, close: 3.95),
-      ChartSampleData(x: 9, open: 10, high: 500.95, low: 8.25, close: 500.95),
-      ChartSampleData(x: 10, open: 170, high: 114.7, low: 8.25, close: 103.95),
-      ChartSampleData(x: 1, open: 110, high: 114.7, low: 1.25, close: 13.95),
-      ChartSampleData(x: 11, open: 100, high: 114.7, low: 18.25, close: 123.95),
-      ChartSampleData(x: 12, open: 10, high: 114.7, low: 8.25, close: 3.95),
-      ChartSampleData(x: 13, open: 11, high: 114.7, low: 8.25, close: 500.95),
-      ChartSampleData(x: 14, open: 120, high: 114.7, low: 8.25, close: 103.95),
+      ChartSampleData(
+          x: 1,
+          open: price - 100,
+          high: price,
+          low: price - 100,
+          close: price - 2),
+      ChartSampleData(
+          x: 2,
+          open: price + 120,
+          high: price + 120,
+          low: price - 110,
+          close: price + 10),
+      ChartSampleData(
+          x: 3,
+          open: price + 100,
+          high: price + 400,
+          low: price - 100,
+          close: price + 150),
+      ChartSampleData(
+          x: 4,
+          open: price + 100,
+          high: price + 150,
+          low: price - 30,
+          close: price + 20),
+      ChartSampleData(
+          x: 5,
+          open: price - 120,
+          high: price + 20,
+          low: price - 120,
+          close: price - 50),
+      ChartSampleData(
+          x: 6,
+          open: price - 20,
+          high: price + 20,
+          low: price - 20,
+          close: price + 20),
+      ChartSampleData(
+          x: 7,
+          open: price - 30,
+          high: price,
+          low: price - 40,
+          close: price - 30),
+      ChartSampleData(
+          x: 8,
+          open: price - 15,
+          high: price + 2,
+          low: price - 15,
+          close: price + 1),
+      ChartSampleData(
+          x: 9,
+          open: price + 5,
+          high: price + 15,
+          low: price,
+          close: price + 2),
+      ChartSampleData(
+          x: 10,
+          open: price + 1,
+          high: price + 15,
+          low: price - 80,
+          close: price + 10),
+      ChartSampleData(
+          x: 11,
+          open: price + 100,
+          high: price + 125,
+          low: price - 50,
+          close: price - 5),
+      ChartSampleData(
+          x: 12,
+          open: price - 70,
+          high: price - 125,
+          low: price - 150,
+          close: price - 125),
+      ChartSampleData(
+          x: 13,
+          open: price - 1,
+          high: price + 125,
+          low: price - 125,
+          close: price + 50),
+      ChartSampleData(
+          x: 14,
+          open: price - 30,
+          high: price + 200,
+          low: price - 100,
+          close: price - 50),
+      ChartSampleData(
+          x: 15,
+          open: price + 30,
+          high: price + 125,
+          low: price - 100,
+          close: price - 100),
     ];
   }
 }

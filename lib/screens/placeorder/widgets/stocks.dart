@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/stock.dart';
 import 'package:stockconsole/screens/chartview/stockchart.dart';
@@ -12,7 +14,7 @@ class StockList extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.separated(
         separatorBuilder: (context, index) {
-          return const Divider(color: Colors.grey);
+          return const Divider();
         },
         itemBuilder: (context, index) {
           final stock = stocks[index];
@@ -20,36 +22,50 @@ class StockList extends StatelessWidget {
           return ListTile(
             contentPadding: const EdgeInsets.all(10),
             title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+                  SizedBox(
+                    width: 130,
+                    child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(stock.company,
+                              style: const TextStyle(
+                                  fontSize: 24, fontWeight: FontWeight.w500)),
+                          Text(stock.symbol,
+                              style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w500)),
+                        ]),
+                  ),
                   Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(stock.company,
-                            style: const TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w500)),
-                        Text(stock.symbol,
-                            style: const TextStyle(
-                                color: Colors.grey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w500)),
-                      ]),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(stock.price.toString(),
                           style: const TextStyle(
                               fontSize: 24, fontWeight: FontWeight.w500)),
                       const SizedBox(height: 3),
-                      Container(
-                        width: 100,
-                        child: const Text("-1.09%",
-                            style: TextStyle(color: Colors.white)),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular((5)),
-                            color: Colors.red),
-                      ),
+                      if (stock.sign == "+")
+                        Container(
+                          width: 100,
+                          child: Text(stock.sign + stock.per.toString() + "%",
+                              style: const TextStyle(color: Colors.white)),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular((5)),
+                              color: Colors.green),
+                        ),
+                      if (stock.sign == "-")
+                        Container(
+                          width: 100,
+                          child: Text(stock.sign + stock.per.toString() + "%",
+                              style: const TextStyle(color: Colors.white)),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular((5)),
+                              color: Colors.red),
+                        ),
                     ],
                   ),
                   Column(
@@ -88,8 +104,9 @@ class StockList extends StatelessWidget {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>
-                                      Stockchart(title: stock.company)));
+                                  builder: (context) => Stockchart(
+                                      title: stock.company,
+                                      price: stock.price)));
                         },
                         child: const Text(
                           "View Chart",

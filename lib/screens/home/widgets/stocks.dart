@@ -13,8 +13,15 @@ class _StocksState extends State<Stocks> {
     return Column(
       children: [
         Card(
-          child: const ListTile(
-            title: Text("1) TCS"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("1) TCS")),
+                Text("QTY: 1"),
+                Text("Total :  3705")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -24,8 +31,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("2) Infosys"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("2) INFOSYS")),
+                Text("QTY: 1"),
+                Text("Total :  1896")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -35,8 +49,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("3) Reliance"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("3) RELIANCE")),
+                Text("QTY: 2"),
+                Text("Total :  5236")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -46,8 +67,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("4) ITC"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("4) ITC")),
+                Text("QTY: 3"),
+                Text("Total :  762")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -57,8 +85,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("5) MRF"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("5) COALINDIA")),
+                Text("QTY: 2"),
+                Text("Total :  370")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -68,8 +103,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("5) MRF"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("6) NMDC")),
+                Text("QTY: 6"),
+                Text("Total :  948")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
@@ -79,19 +121,15 @@ class _StocksState extends State<Stocks> {
               borderSide: const BorderSide(color: Colors.white)),
         ),
         Card(
-          child: const ListTile(
-            title: Text("5) MRF"),
-          ),
-          elevation: 8,
-          shadowColor: Colors.green,
-          margin: const EdgeInsets.all(20),
-          shape: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(10),
-              borderSide: const BorderSide(color: Colors.white)),
-        ),
-        Card(
-          child: const ListTile(
-            title: Text("5) MRF"),
+          child: ListTile(
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: const [
+                SizedBox(width: 100, child: Text("7) IRCTC")),
+                Text("QTY: 2"),
+                Text("Total :  1534")
+              ],
+            ),
           ),
           elevation: 8,
           shadowColor: Colors.green,
