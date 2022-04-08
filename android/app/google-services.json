@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "747183178442",
-    "project_id": "stockconsole-a3867",
-    "storage_bucket": "stockconsole-a3867.appspot.com"
+    "project_number": "686602636387",
+    "project_id": "stockconsole-e8d10",
+    "storage_bucket": "stockconsole-e8d10.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:747183178442:android:4f2a0ca1eb7e8820ecea33",
+        "mobilesdk_app_id": "1:686602636387:android:68c2f525a59731171d7c56",
         "android_client_info": {
           "package_name": "com.example.stockconsole"
         }
       },
       "oauth_client": [
         {
-          "client_id": "747183178442-m9fj4qht1voufvaeipajh7lg3fvdcmr6.apps.googleusercontent.com",
+          "client_id": "686602636387-0n8d3go90eh8pqi77a121j9eevfj3j02.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.stockconsole",
+            "certificate_hash": "51869a9de3100eebec542ea36e028bbf96b15cd9"
+          }
+        },
+        {
+          "client_id": "686602636387-72vqv9t2jqh5h7g14qg4euj9gad90reb.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC72VthwXvQC5x5Ss73VwJs3LqGNtwZqLU"
+          "current_key": "AIzaSyBfuJBj0ZY9RuCkUhFHtHVvoTK3UBtzQ_8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "747183178442-m9fj4qht1voufvaeipajh7lg3fvdcmr6.apps.googleusercontent.com",
+              "client_id": "686602636387-72vqv9t2jqh5h7g14qg4euj9gad90reb.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
