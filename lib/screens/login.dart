@@ -88,17 +88,18 @@ class _LoginState extends State<Login> {
       borderRadius: BorderRadius.circular(30),
       color: Colors.redAccent,
       child: MaterialButton(
-          padding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-          minWidth: MediaQuery.of(context).size.width,
-          onPressed: () {
-            signIn(emailController.text, passwordController.text);
-          },
-          child: const Text(
-            "Login",
-            textAlign: TextAlign.center,
-            style: TextStyle(
-                fontSize: 20, color: Colors.white, fontWeight: FontWeight.bold),
-          )),
+        padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+        minWidth: MediaQuery.of(context).size.width,
+        onPressed: () {
+          signIn(emailController.text, passwordController.text);
+        },
+        child: const Text(
+          "Sign In",
+          textAlign: TextAlign.center,
+          style: TextStyle(
+              fontSize: 15, color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
     );
 
     return Scaffold(
