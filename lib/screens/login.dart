@@ -141,7 +141,7 @@ class _LoginState extends State<Login> {
                                       builder: (context) => const Signup()));
                             },
                             child: const Text(
-                              "SignUp",
+                              " Sign Up",
                               style: TextStyle(
                                   color: Colors.redAccent,
                                   fontWeight: FontWeight.bold,
