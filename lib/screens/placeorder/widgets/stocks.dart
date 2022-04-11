@@ -2,6 +2,8 @@ import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/stock.dart';
+import 'package:stockconsole/screens/buysection/Sell.dart';
+import 'package:stockconsole/screens/buysection/purchase.dart';
 import 'package:stockconsole/screens/chartview/stockchart.dart';
 
 class StockList extends StatelessWidget {
@@ -74,7 +76,14 @@ class StockList extends StatelessWidget {
                         style: TextButton.styleFrom(
                           primary: Colors.green,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Purchase(
+                                      title: stock.company,
+                                      price: stock.price)));
+                        },
                         child:
                             const Text('Buy', style: TextStyle(fontSize: 20)),
                       )
@@ -86,7 +95,14 @@ class StockList extends StatelessWidget {
                         style: TextButton.styleFrom(
                           primary: Colors.red,
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => Sell(
+                                      title: stock.company,
+                                      price: stock.price)));
+                        },
                         child: const Text(
                           "Sell",
                           style: TextStyle(fontSize: 20),
