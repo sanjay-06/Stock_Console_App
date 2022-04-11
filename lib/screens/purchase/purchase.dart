@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:stockconsole/models/Amount.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Purchase extends StatefulWidget {
   final String title;
@@ -67,6 +70,18 @@ class _PurchaseState extends State<Purchase> {
     _billAmountController.dispose();
     _tipPercentageController.dispose();
     super.dispose();
+  }
+
+  void purchase(price, qty, sym) {
+    FirebaseFirestore.instance
+        .collection('portfolio')
+        .doc(FirebaseAuth.instance.currentUser!.email)
+        .set({
+      "stocks": [
+        {'price': price, 'qty': qty, 'title': sym}
+      ]
+    });
+    Fluttertoast.showToast(msg: "Order Placed successfully ");
   }
 
   @override
@@ -144,7 +159,9 @@ class _PurchaseState extends State<Purchase> {
                         key: const Key('totalAmount'),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            purchase(price, _tipPercentage, title);
+                          },
                           child: const Text(
                             "Buy",
                             style: TextStyle(color: Colors.green),

@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:stockconsole/models/Amount.dart';
 
 class Sell extends StatefulWidget {
@@ -38,6 +41,18 @@ class _SellState extends State<Sell> {
   int _tipPercentage = defaultTipPercentage;
 
   _SellState(this.title, this.price);
+
+  void purchase(price, qty, sym) {
+    FirebaseFirestore.instance
+        .collection('portfolio')
+        .doc(FirebaseAuth.instance.currentUser!.email)
+        .set({
+      "stocks": [
+        {'price': price, 'qty': -qty, 'title': sym}
+      ]
+    });
+    Fluttertoast.showToast(msg: "Sell Placed successfully ");
+  }
 
   @override
   void initState() {
@@ -144,7 +159,9 @@ class _SellState extends State<Sell> {
                         key: const Key('totalAmount'),
                       ),
                       TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            purchase(price, _tipPercentage, title);
+                          },
                           child: const Text(
                             "Sell",
                             style: TextStyle(color: Colors.red),
