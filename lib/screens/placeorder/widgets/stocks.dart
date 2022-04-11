@@ -1,9 +1,7 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:stockconsole/models/stock.dart';
-import 'package:stockconsole/screens/buysection/Sell.dart';
-import 'package:stockconsole/screens/buysection/purchase.dart';
+import 'package:stockconsole/screens/purchase/Sell.dart';
+import 'package:stockconsole/screens/purchase/purchase.dart';
 import 'package:stockconsole/screens/chartview/stockchart.dart';
 
 class StockList extends StatelessWidget {
