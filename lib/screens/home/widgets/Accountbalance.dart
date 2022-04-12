@@ -12,7 +12,8 @@ class _AccountbalanceState extends State<Accountbalance> {
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Row(
+        child: SingleChildScrollView(
+            child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Column(
@@ -101,6 +102,6 @@ class _AccountbalanceState extends State<Accountbalance> {
               ],
             ),
           ],
-        ));
+        )));
   }
 }
