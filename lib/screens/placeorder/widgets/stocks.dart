@@ -22,7 +22,7 @@ class StockList extends StatelessWidget {
           return ListTile(
             contentPadding: const EdgeInsets.all(10),
             title: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SizedBox(
                     width: 130,
@@ -68,70 +68,68 @@ class StockList extends StatelessWidget {
                         ),
                     ],
                   ),
-                  Column(
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          primary: Colors.green,
+                  Theme(
+                    data: Theme.of(context).copyWith(
+                        textTheme:
+                            const TextTheme().apply(bodyColor: Colors.black),
+                        dividerColor: Colors.white,
+                        iconTheme: const IconThemeData(color: Colors.black)),
+                    child: PopupMenuButton<int>(
+                      itemBuilder: (context) => [
+                        const PopupMenuItem<int>(
+                          value: 0,
+                          child: Text('Buy',
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.green)),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Purchase(
-                                      title: stock.company,
-                                      price: stock.price)));
-                        },
-                        child:
-                            const Text('Buy', style: TextStyle(fontSize: 20)),
-                      )
-                    ],
+                        const PopupMenuItem<int>(
+                            value: 1,
+                            child: Text(
+                              "Sell",
+                              style: TextStyle(fontSize: 20, color: Colors.red),
+                            )),
+                        const PopupMenuDivider(),
+                        const PopupMenuItem<int>(
+                            value: 2,
+                            child: Text(
+                              "View Chart",
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.blue),
+                            )),
+                      ],
+                      onSelected: (item) => SelectedItem(context, item, stock),
+                    ),
                   ),
-                  Column(
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          primary: Colors.red,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Sell(
-                                      title: stock.company,
-                                      price: stock.price)));
-                        },
-                        child: const Text(
-                          "Sell",
-                          style: TextStyle(fontSize: 20),
-                        ),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      TextButton(
-                        style: TextButton.styleFrom(
-                          primary: Colors.blue,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Stockchart(
-                                      title: stock.company,
-                                      price: stock.price)));
-                        },
-                        child: const Text(
-                          "View Chart",
-                          style: TextStyle(fontSize: 15),
-                        ),
-                      )
-                    ],
-                  )
                 ]),
           );
         },
         itemCount: stocks.length);
+  }
+
+  // ignore: non_constant_identifier_names
+  void SelectedItem(BuildContext context, item, stock) {
+    switch (item) {
+      case 0:
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    Purchase(title: stock.company, price: stock.price)));
+        break;
+      case 1:
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    Sell(title: stock.company, price: stock.price)));
+        break;
+      case 2:
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    Stockchart(title: stock.company, price: stock.price)));
+        break;
+    }
   }
 }
