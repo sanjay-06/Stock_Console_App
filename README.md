@@ -9,7 +9,7 @@
 ## Page 2 - Signup
 <br>
 
-![Signup](screenshots/Signup.png)
+![Signup](screenshots/signup.png)
 
 ## Page 3 - Market Overview
 <br>
