@@ -10,8 +10,6 @@ followed by the central dashboards which displays all our buyings, its current v
 invested, Profit &amp; Loss and a page to place an order to buy new stocks . A single chart to display stock
 price changes.
 
-<br>
-
 # Applications Used
 
 ```
@@ -20,7 +18,7 @@ Login and Authentication : Firebase
 News API : https://newsapi.org
 Language : Flutter
 ```
-<br>
+
 
 # Sequence Diagram
 
