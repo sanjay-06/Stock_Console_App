@@ -1,5 +1,46 @@
-# stockconsole
+# Stock Console Mobile Application
 
+## Download Apk <a href="https://drive.google.com/drive/folders/1s2riUgseMtsb7VyqAm5j56qw6RfuaopL?usp=sharing">stockconsole</a>
+
+<br>
+
+# Description
+
+
+The stock console is where we can View and track our portfolio of stocks. It consists of a login page
+followed by the central dashboards which displays all our buyings, its current value, Total amount
+invested, Profit &amp; Loss and a page to place an order to buy new stocks . A single chart to display stock
+price changes.
+
+<br>
+
+# Applications Used
+
+```
+Database : Firebase
+Login and Authentication : Firebase
+News API : https://newsapi.org
+Language : Flutter
+```
+<br>
+
+# Sequence Diagram
+
+Login & Signup
+
+![login](screenshots/loginseq.png)
+
+
+Place order
+
+![placeorder](screenshots/loginseq.png)
+ 
+<br>
+
+Use Case Diagram - Stock console
+<br>
+
+![usecase](screenshots/stockconsole.png)
 
 ## Page 1 - Login
 <br>
