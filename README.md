@@ -1,8 +1,57 @@
 # stockconsole
 
-A new Flutter project.
 
-## Getting Started
+## Page 1 - Login
+<br>
+
+![login](screenshots/login.png)
+
+## Page 2 - Signup
+<br>
+
+![Signup](screenshots/Signup.png)
+
+## Page 3 - Market Overview
+<br>
+
+![market](screenshots/market.png)
+
+## Page 4 - Place order
+<br>
+
+![placeorder](screenshots/placeorder.png)
+
+## Page 5 - Buy
+<br>
+
+![buy](screenshots/buy.png)
+
+## Page 6 - Sell
+<br>
+
+![Sell](screenshots/sell.png)
+
+## Page 7 - Singlechart view
+<br>
+
+![chart](screenshots/singlechart.png)
+
+## Page 8 - Portfolio
+<br>
+
+![portfolio](screenshots/portfolio.png)
+
+## Page 9 - News
+<br>
+
+![news](screenshots/news.png)
+
+## Page 10 - News view
+<br>
+
+![news view](screenshots/newsview.png)
+
+# Getting Started
 
 This project is a starting point for a Flutter application.
 
